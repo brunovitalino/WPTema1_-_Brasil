@@ -6,10 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
-	<!-- 1. Add latest jQuery and fancyBox files -->
+	<!-- Adiciona o mais recente jQuery para fancyBox -->
 	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- Adiciona os arquivos fancyBox -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+	<!-- bxSlider Javascript file -->
+	<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="<?php bloginfo('template_directory'); ?>/assets/css/jquery.bxslider.css" rel="stylesheet" />
 
 	<?php wp_head(); ?>
 </head>
