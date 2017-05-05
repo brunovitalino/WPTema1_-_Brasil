@@ -15,6 +15,10 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
+.clear{
+	clear: both;
+}
+
 /* div header */
 .header{
 	height: 600px;
@@ -101,4 +105,14 @@ body{
 .box-content-post a{
 	display: inline-block;
 	width: 70px;
+}
+
+/*galeria*/
+.galeria{
+	background-color: #fff;
+	padding: 20px 0;
+}
+.galeria h2, .galeria p{
+	color: #383838;
+	text-align: center;
 }
