@@ -124,3 +124,44 @@ body{
 .videos h2{
 	text-align: center;
 }
+
+/*Footer (Formulário de contato)*/
+.footer{
+	background: #1e2832;
+	padding: 30px 0;
+}
+.footer h2{
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+.footer input, .footer textarea{
+	background: #29323c !important;
+	border: none !important;
+	border-radius: 0 !important;
+}
+.footer label{
+	display: none !important;
+}
+.footer #frm_field_8_container, .footer #frm_field_9_container{
+	float: left;
+	width: 479px;
+	clear: inherit;
+	margin-bottom: 1px;
+}
+.footer #frm_field_8_container{
+	width: 480px;
+	margin-right: 1px;
+}
+.footer textarea{
+	height: 160px !important;
+}
+.footer .frm_submit button{
+	margin: 0 auto !important;
+	width: 200px !important;
+	background: #60d3b1 !important;
+	padding: 8px 20px !important;
+	color: #fff !important;
+	border-radius: 100px !important;
+	display: block;
+}
