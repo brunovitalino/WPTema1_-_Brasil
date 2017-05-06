@@ -8,6 +8,21 @@
 	</div>
 </div>
 
+<div class="footer2">
+	<div class="wrap">
+		<p>Copyright, direitos reservados. Quisque ac placerat risus. 2017</p>
+		<ul class="soc">
+		    <li><a class="soc-twitter" href="#"></a></li>
+		    <li><a class="soc-facebook" href="#"></a></li>
+		    <li><a class="soc-googleplus" href="#"></a></li>
+		    <li><a class="soc-pinterest" href="#"></a></li>
+		    <li><a class="soc-linkedin" href="#"></a></li>
+		    <li><a class="soc-rss soc-icon-last" href="#"></a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>
+
 <script type="text/javascript">
 	$("[data-fancybox]").fancybox({
 		// Options will go here
