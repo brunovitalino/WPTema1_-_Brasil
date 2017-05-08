@@ -21,36 +21,56 @@
 </head>
 <body>
 
-<div class="header">
-	<div class="wrap">
-		<h1><a href="<?php echo site_url(); ?>" title="<?php bloginfo('name'); ?>">BVWP</a></h1>
-		<div class="info">
+<?php 
+	if(is_home()) :
+?>
+		<div class="header">
+			<div class="wrap">
+				<h1><a href="<?php echo site_url(); ?>" title="<?php bloginfo('name'); ?>">BVWP</a></h1>
+				<div class="info">
 
-			<?php
-				$args = array('post_type' => 'page', 'pagename' => 'sobre');
-				$my_page = get_posts( $args );
-			?>
-			<?php
-				if($my_page) :
-					foreach( $my_page as $post ) :
-						setup_postdata( $post );
-			?>
-						<h2><?php the_title(); ?></h2>
-			<?php
-						the_excerpt();
-			?>
-						<a href="<?php the_permalink(); ?>" class="custom-botao">Leia mais</a>
-			<?php
-					endforeach;
-			?>
-			<?php
-				else:
-			?>
-				<p>Nenhum conteudo inserido na pagina sobre.</p>
-			<?php
-				endif;
-			?>
-			
+					<?php
+						$args = array('post_type' => 'page', 'pagename' => 'sobre');
+						$my_page = get_posts( $args );
+					?>
+					<?php
+						if($my_page) :
+							foreach( $my_page as $post ) :
+								setup_postdata( $post );
+					?>
+								<h2><?php the_title(); ?></h2>
+					<?php
+								the_excerpt();
+					?>
+								<a href="<?php the_permalink(); ?>" class="custom-botao">Leia mais</a>
+					<?php
+							endforeach;
+					?>
+					<?php
+						else:
+					?>
+						<p>Nenhum conteudo inserido na pagina sobre.</p>
+					<?php
+						endif;
+					?>
+					
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
+<?php 
+	else:
+?>
+		<div class="header-page">
+			<div class="wrap">
+				<h1><a href="<?php echo site_url(); ?>" title="<?php bloginfo('name'); ?>">BVWP</a></h1>
+			</div>
+			<div class="bg-page">
+				<div class="wrap">
+					<h2><?php the_title(); ?></h2>
+					<?php wp_custom_breadcrumbs(); ?>
+				</div>
+			</div>
+		</div>
+<?php
+	endif;
+?>

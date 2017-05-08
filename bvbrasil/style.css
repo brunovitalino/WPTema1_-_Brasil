@@ -217,12 +217,46 @@ body{
 	color: #383838;
 	text-align: center;
 }
-/*Vídeo*/
+/*Video*/
 .videos{
 	padding: 30px 0;
 }
 .videos h2{
 	text-align: center;
+}
+
+/*Pagina interna*/
+.header-page{
+	background: #000;
+}
+.header-page h1{
+	margin: 0;
+}
+.header-page h1 a{
+	color: #fff;
+	text-decoration: none;
+	padding: 8px 0;
+	display: block;
+}
+.bg-page{
+	background: url(assets/images/header-page.jpg) center top;
+	background-repeat: no-repeat;
+	display: block;
+	height: 365px;
+}
+.bg-page h2{
+	color: #fff;
+	padding-top: 140px;
+	text-transform: uppercase;
+	margin: 0;
+	font-weight: normal;
+	font-size: 30px;
+}
+#crumbs a, #crumbs span{
+	color: #fff;
+}
+#crumbs{
+	color: #fff;
 }
 
 /*Footer (Formulário de contato)*/

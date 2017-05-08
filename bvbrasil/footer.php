@@ -10,7 +10,7 @@
 
 <div class="footer2">
 	<div class="wrap">
-		<p>Copyright, direitos reservados. Quisque ac placerat risus. 2017</p>
+		<p>© 2017 - Todos os direitos reservados - Bruno Vitalino.</p>
 		<ul class="soc">
 		    <li><a class="soc-twitter" href="#"></a></li>
 		    <li><a class="soc-facebook" href="#"></a></li>
