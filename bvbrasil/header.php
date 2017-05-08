@@ -66,8 +66,18 @@
 			</div>
 			<div class="bg-page">
 				<div class="wrap">
-					<h2><?php the_title(); ?></h2>
-					<?php wp_custom_breadcrumbs(); ?>
+					<?php 
+						if(is_category()) :
+					?>
+							<h2>Blog</h2>
+					<?php 
+						else:
+					?>
+							<h2><?php the_title(); ?></h2>
+					<?php 
+						endif;
+						wp_custom_breadcrumbs();
+					?>
 				</div>
 			</div>
 		</div>

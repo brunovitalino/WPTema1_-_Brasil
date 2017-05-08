@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
 <div class="blog">
+
 	<div class="wrap">
 		<h2>BLOG</h2>
-
 		<div class="box-listar-posts">
 
 			<?php 
@@ -29,13 +29,14 @@
 
 						</div>
 			<?php
-					$cont++;
+						$cont++;
 					endforeach;
 				endif;
 			?>
 
 		</div>
 	</div>
+
 </div>
 
 <!-- Como os posts listados ficam flutuando na div blog, então a div seguinte acabará ficando na mesma área. Para evitar isso foi declaro explícitamente uma div de separação -->
