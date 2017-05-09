@@ -9,6 +9,7 @@
 		<div class="box-listar-posts">
 			<?php
 				$cont = 1;
+				// Limitar a exibição de posts: query_posts('showposts'=2);
 				if( have_posts() ) :
 					while (have_posts()) :
 						the_post();

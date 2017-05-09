@@ -8,6 +8,8 @@
 				while (have_posts())
 				{
 					the_post();
+
+					the_post_thumbnail('full');
 					the_content();
 				}
 			}

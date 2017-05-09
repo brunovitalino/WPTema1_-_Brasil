@@ -6,8 +6,9 @@
 		<h2>BLOG</h2>
 		<div class="box-listar-posts">
 
-			<?php 
-				$args = array('post_type' => 'post', 'show_posts' => 2);
+			<?php
+				// Outra forma de limitar posts a 2: 'posts_per_page' => 2
+				$args = array('post_type' => 'post', 'showposts' => 2);
 				$my_posts = get_posts( $args );
 			?>
 			<?php
