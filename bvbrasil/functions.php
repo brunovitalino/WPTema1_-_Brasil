@@ -5,12 +5,13 @@ add_theme_support('post-thumbnails');
 add_image_size('thumb-custom', 232, 156, true);
 
 
+//Videos
 /**************************************
  * Registro Custom Post type profissional
  **************************************/
 add_action('init', 'videos_registrer');
-function videos_registrer(){
-     $labels = array(
+function videos_registrer() {
+    $labels = array(
         'name' => _x('Vídeos', 'post type general name'),
         'singular_name' => _x('Vídeos', 'post type singular name'),
         'add_new' => _x('Adicionar novo video', 'video'),
@@ -35,8 +36,8 @@ function videos_registrer(){
         'hierarchical' => false,
         'menu_position' => 4,
         'supports' => array('title'),
-      );
-    register_post_type('videos',$args);
+    );
+    register_post_type('videos', $args);
 }
 
 /* Caminho da pagina */
@@ -54,61 +55,67 @@ function wp_custom_breadcrumbs() {
  
   if (is_home() || is_front_page()) {
  
-    if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+    if ($showOnHome == 1)
+      echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
  
-  } else {
+  }else {
  
     echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
+      if ($thisCat->parent != 0)
+        echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
       echo $before . 'categoria "' . single_cat_title('', false) . '"' . $after;
  
-    } elseif ( is_search() ) {
+    }elseif ( is_search() ) {
       echo $before . 'Search results for "' . get_search_query() . '"' . $after;
  
-    } elseif ( is_day() ) {
+    }elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
       echo $before . get_the_time('d') . $after;
  
-    } elseif ( is_month() ) {
+    }elseif ( is_month() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo $before . get_the_time('F') . $after;
  
-    } elseif ( is_year() ) {
+    }elseif ( is_year() ) {
       echo $before . get_the_time('Y') . $after;
  
-    } elseif ( is_single() && !is_attachment() ) {
+    }elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-      } else {
+        if ($showCurrent == 1)
+          echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      }else {
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+        if ($showCurrent == 0)
+          $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
         echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+        if ($showCurrent == 1)
+          echo $before . get_the_title() . $after;
       }
  
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+    }elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
       echo $before . $post_type->labels->singular_name . $after;
  
-    } elseif ( is_attachment() ) {
+    }elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
       echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
       echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      if ($showCurrent == 1)
+        echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  
-    } elseif ( is_page() && !$post->post_parent ) {
+    }elseif ( is_page() && !$post->post_parent ) {
       if ($showCurrent == 1) echo $before . get_the_title() . $after;
  
-    } elseif ( is_page() && $post->post_parent ) {
+    }elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;
       $breadcrumbs = array();
       while ($parent_id) {
@@ -123,15 +130,15 @@ function wp_custom_breadcrumbs() {
       }
       if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  
-    } elseif ( is_tag() ) {
+    }elseif ( is_tag() ) {
       echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
  
-    } elseif ( is_author() ) {
+    }elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
       echo $before . 'Articles posted by ' . $userdata->display_name . $after;
  
-    } elseif ( is_404() ) {
+    }elseif ( is_404() ) {
       echo $before . 'Error 404' . $after;
     }
  
@@ -145,3 +152,22 @@ function wp_custom_breadcrumbs() {
  
   }
 } // end wp_custom_breadcrumbs()
+
+
+//WIDGETS
+/**************************************
+ * Registro Custom Post type profissional
+ **************************************/
+if( function_exists('register_sidebar') )
+    register_sidebar
+    (
+        array
+        (
+            'name'  => 'Sidebar footer',
+            'id'    => 'sidebar-footer',
+            'before_widget' => '<div class="box">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>'
+        )
+    );

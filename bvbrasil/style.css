@@ -292,6 +292,17 @@ body{
 	text-transform: uppercase;
 }
 
+/*Widgets*/
+.widgets{
+	background: #fff;
+	padding: 20px 0;
+}
+.widgets .box{
+	float: left;
+	width: 200px;
+	padding: 20px;
+}
+
 /*Footer (Formulário de contato)*/
 .footer{
 	background: #1e2832;
